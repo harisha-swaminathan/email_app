@@ -1,0 +1,28 @@
+.eachEmail{
+    width:80rem;
+    border: 1px solid darken($pale_green,7%);
+    border-top:none;
+    color: rgb(31, 30, 30);
+    font-size:large;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    padding:1.2rem;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: background .3s ease;
+    &:hover{
+        background: $pale_green;
+    }
+    @media(min-width: 45rem){
+        flex-direction:row;
+        justify-content: space-between;
+        padding: 1.6rem;
+    }
+}
+.each_email{
+text-decoration: none;
+&:hover{
+    background: $pale_green;
+}
+}
