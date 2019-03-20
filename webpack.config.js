@@ -1,7 +1,10 @@
 const path=require('path');
-
-module.exports={
-    entry: './src/app.js',
+const ExtractTextPlugin=require('extract-text-webpack-plugin');
+module.exports=(env)=>{
+const production=env==='production';
+const Extract=new ExtractTextPlugin('styles.css');
+    return{
+        entry: './src/app.js',
     output:{
         path: path.join(__dirname,'public'),
         filename:'bundle.js'
@@ -12,17 +15,32 @@ module.exports={
             test: /\.js$/,
             exclude: /node_modules/
         },{
-            test:/\.s?css$/,
-            use:[
-                'style-loader',
-                'css-loader',
-                'sass-loader'
-            ]
+            test: /\.s?css$/,
+         use:Extract.extract({
+             use:[
+                 {
+                     loader:'css-loader',
+                     options:{
+                         sourceMap:true
+                     }
+                 },
+                 {
+                     loader:'sass-loader',
+                     options:{
+                         sourceMap:true
+                     }
+                 }
+             ]
+         })
         }]
     },
-    devtool:'cheap-module-eval-source-map',
+    plugins:[
+        Extract
+    ],
+    devtool: production? 'source-map': 'inline-source-map',
     devServer:{
         contentBase:path.join(__dirname,'public'),
         historyApiFallback:true
+    }
     }
 };
