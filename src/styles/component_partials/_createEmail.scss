@@ -13,7 +13,7 @@
 .createEmail__area{
     @extend .createEmail;
     max-height:15rem;
-    max-width: 70rem;
+    max-width: 55rem;
     @media(min-width: 45rem){
         width:70rem;
         height:15rem;

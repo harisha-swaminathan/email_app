@@ -1,5 +1,5 @@
 .viewMail{
-    max-width:80rem;
+    max-width:61rem;
     border: 1px solid $pale_green;
     margin-bottom:10px;
     margin-left: 10px;
@@ -10,7 +10,7 @@
     align-items: flex-start;
     font-size: large;
     @media(min-width: 45rem){
-        width: 80rem;
+        max-width: 80rem;
         margin: 0 0 10px 0;
     }
 }
