@@ -6,7 +6,7 @@ export default class EmailList extends React.Component{
     email:[]
   };
     componentDidMount() {
-      axios.get('http://5c5a21f9af3ff700140de477.mockapi.io/api/email')
+      axios.get('https://5c5a21f9af3ff700140de477.mockapi.io/api/email')
       .then(result => {
         const email = result.data;
         this.setState({ email });

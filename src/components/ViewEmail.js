@@ -7,7 +7,7 @@ export default class ViewEmail extends React.Component{
         mail:[]
       };
         componentDidMount() {
-          axios.get(`http://5c5a21f9af3ff700140de477.mockapi.io/api/email/${this.props.match.params.id}`)
+          axios.get(`https://5c5a21f9af3ff700140de477.mockapi.io/api/email/${this.props.match.params.id}`)
           .then(result => {
             const mail = result.data;
             this.setState({ mail });
